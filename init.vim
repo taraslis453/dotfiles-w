@@ -1,16 +1,17 @@
-let mapleader = ','
-call plug#begin('~/AppData/Local/nvim/plugged')
+call plug#begin('~/AppData/Local/nvim/plugged')           
+  Plug 'bilalq/lite-dfm'
   Plug 'tpope/vim-commentary'
   Plug 'jiangmiao/auto-pairs'
   Plug 'easymotion/vim-easymotion'
   Plug 'tpope/vim-surround'
   Plug 'unblevable/quick-scope'
   Plug 'justinmk/vim-sneak'
-  Plug 'junegunn/goyo.vim'
   Plug 'reedes/vim-pencil'
   Plug 'NLKNguyen/papercolor-theme'
   Plug 'psliwka/vim-smoothie'
 call plug#end()
+let g:lite_dfm_left_offset = 1
+let mapleader = ','
 set background=light
 colorscheme PaperColor
 set hidden
@@ -40,6 +41,8 @@ nnoremap j gj
 nnoremap k gk
 nnoremap о gj
 nnoremap л gk
+nnoremap ю .
+nnoremap . /
 set noshowmode
 set noswapfile
 set nobackup
@@ -47,7 +50,7 @@ set noerrorbells
 augroup Textgroup
 	autocmd!
 	autocmd BufEnter * :SoftPencil
-	autocmd BufEnter * :Goyo 100
+	autocmd BufEnter * :LiteDFMToggle
 augroup END
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
@@ -107,3 +110,4 @@ map пі <Plug>Sneak_;
 " label-mode
 nmap і <Plug>SneakLabel_s
 nmap І <Plug>SneakLabel_S
+
